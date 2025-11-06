@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="City Temperature" icon-name="utility:world">
+      <div class="slds-m-around_medium">
+        <lightning-input
+          label="Enter City Name"
+          type="text"
+          value={city}
+          onchange={handleCityChange}
+        ></lightning-input>
+        <lightning-button
+          label="Get Temperature"
+          variant="brand"
+          class="slds-m-top_medium"
+          onclick={fetchTemperature}
+        ></lightning-button>
+      </div>
+      <template if:true={weatherData}>
+        <div class="slds-m-around_medium">
+          <p><strong>City:</strong> {weatherData.name}</p>
+          <p><strong>Temperature:</strong> {weatherData.main.temp}°C</p>
+          <template if:true={hasWeatherDescription}>
+            <p><strong>Weather:</strong> {weatherDescription}</p>
+          </template>
+        </div>
+      </template>
+      <template if:true={error}>
+        <div class="slds-m-around_medium slds-text-color_error">
+          <p>{error}</p>
+        </div>
+      </template>
+    </lightning-card>
+  </template>
+  

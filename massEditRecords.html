@@ -1,0 +1,14 @@
+<template>
+  
+    <lightning-card title="Mass edit Records" icon-name="standard : account">
+    <Lightning-datatable
+    key-field="id"
+    data={records}
+    coulmns={columns}
+    draft-values={draftValues}
+    onsave={handleSave}
+    hide-checkbox-coloumn></Lightning-datatable>
+</lightning-card>
+
+
+</template>

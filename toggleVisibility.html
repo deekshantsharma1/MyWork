@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Conditional Display">
+        <div class="slds-p-around_medium">
+            <lightning-input
+                type="checkbox"
+                label="Show secret message"
+                onchange={toggleMessage}
+            ></lightning-input>
+
+            <template if:true={showMessage}>
+                <p class="slds-m-top_medium"> Surprise! You found the hidden message!</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Select States (Multi-Picklist)">
+        <div class="slds-p-around_medium">
+            <template if:true={picklistValues.length}>
+                <template for:each={picklistValues} for:item="state">
+                    <lightning-input 
+                        key={state.value}
+                        type="checkbox"
+                        label={state.label}
+                        value={state.value}
+                        onchange={handleCheckboxChange}>
+                    </lightning-input>
+                </template>
+            </template>
+            <template if:false={picklistValues.length}>
+                <p>Loading states...</p>
+            </template>
+        </div>
+
+        <div class="slds-p-around_medium">
+            <lightning-button 
+                label="Submit" 
+                variant="brand" 
+                onclick={handleSubmit}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

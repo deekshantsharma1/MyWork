@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="To-Do List " icon-name="standard:task">
+        <div class="slds-m-around_medium">
+    <lightning-input label="task" value={task} onchange={handletaskchange}></lightning-input>
+<lightning-button label="add task" onclick={addtask}></lightning-button>
+<ul class="slds-m-top_medium">
+    <template for:each={tasks} for:item="t">
+
+        <li key={t.id}>{t.name}</li>
+    </template>
+</ul>
+
+        </div>
+
+
+
+
+
+    </lightning-card>
+</template>

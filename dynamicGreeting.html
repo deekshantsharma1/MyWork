@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Smart Greeting">
+        <div class="slds-p-around_medium">
+            <lightning-input
+                label="Enter your name"
+                value={name}
+                onchange={handleNameChange}
+            ></lightning-input>
+            <p class="slds-m-top_medium">{greetingMessage}</p>
+        </div>
+    </lightning-card>
+</template>

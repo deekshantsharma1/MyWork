@@ -1,0 +1,10 @@
+<template>
+    <lightning-button label="New" onclick={handleNewClick} class="slds-m-bottom_medium"></lightning-button>
+    
+    <lightning-datatable
+        data={accounts}
+        columns={columns}
+        key-field="Id"
+        onrowaction={handleRowAction}>
+    </lightning-datatable>
+</template>

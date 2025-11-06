@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Current Weather" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <lightning-input 
+                label="Enter City"
+                value={city}
+                onchange={handleCityChange}
+                placeholder="e.g., New York"
+            ></lightning-input>
+            
+            <template if:true={isWeatherLoaded}>
+                <div class="weather-details">
+                    <div class="weather-info">
+                        <h2>{city}, {country}</h2>
+                        <p>{temperature}°C</p>
+                        <p>{weatherDescription}</p>
+                    </div>
+                    <div class="weather-icon">
+                        <img src={weatherIcon} alt="weather icon" />
+                    </div>
+                </div>
+            </template>
+            
+            <template if:true={errorMessage}>
+                <div class="slds-text-color_error">{errorMessage}</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
